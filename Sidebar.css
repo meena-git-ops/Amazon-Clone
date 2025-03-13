@@ -1,0 +1,76 @@
+/* Sidebar Styles */
+.sidebar {
+  position: fixed;
+  top: 60px; /* Sidebar starts below the header */
+  left: 0;
+  width: 250px;
+  height: calc(100vh - 60px); /* Full height minus header */
+  background: black; /* Black sidebar */
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(-100%); /* Hidden by default */
+  padding-top: 20px;
+  z-index: 1000;
+}
+
+/* Sidebar Opens */
+.sidebar.open {
+  transform: translateX(0);
+}
+
+/* Sidebar Menu */
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  padding: 12px 20px;
+  font-size: 18px;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Sidebar Links */
+.sidebar ul li a {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+/* Open Sidebar Button */
+.open-sidebar-btn {
+  position: fixed;
+  top: 110px;
+  left: 5px;
+  background-color: #d1d5db; /* Tailwind's gray-300 */
+  color: black;
+
+  border: none;
+  padding: 10px 12px;
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 5px;
+  z-index: 1100;
+  transition: 0.3s;
+}
+
+/* Hide Open Button when Sidebar is Open */
+.sidebar.open + .open-sidebar-btn {
+  display: none;
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
